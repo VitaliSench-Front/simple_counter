@@ -1,0 +1,23 @@
+.button {
+    width: 73px;
+    height: 40px;
+    color: #282c34;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 5px;
+    font-size: 23px;
+    font-weight: bold;
+;
+}
+
+.opacity {
+    width: 73px;
+    height: 40px;
+    color: #282c34;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 5px;
+    font-size: 23px;
+    font-weight: bold;
+    opacity: 50%;
+}

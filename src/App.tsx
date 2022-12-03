@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import ButtonInc from "./Components/ButtonInc/ButtonInc";
+import ButtonRes from "./Components/ButtonRes/ButtonRes";
+import Counter from "./Components/Counter";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [count, setCount] = useState(0);
+
+    const counterInc = () => {
+        if (count < lastValue) {
+            setCount(count + 1)
+        }
+    }
+
+    const counterRes = () => {
+        setCount(startValue)
+    }
+
+    const startValue = 0
+    const lastValue = 5
+
+
+
+    return (
+        <div className="App">
+            <div className="counter">
+                <Counter count={count}/>
+            </div>
+            <div className="buttons">
+                <ButtonInc name={"Inc"} callback={counterInc} isDisabled={lastValue === count}/>
+                <ButtonRes name={"Reset"} callback={counterRes} isDisabled={startValue === count}/>
+            </div>
+        </div>
+    );
 }
 
 export default App;
